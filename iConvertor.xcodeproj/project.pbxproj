@@ -150,8 +150,8 @@
 		A24F99882B31E77800125F58 /* Audio */ = {
 			isa = PBXGroup;
 			children = (
-				A2EDC5102B2A743A00E57B5D /* AudioDetailView.swift */,
 				A24656982B2A66EA0091BA52 /* AudioListView.swift */,
+				A2EDC5102B2A743A00E57B5D /* AudioDetailView.swift */,
 			);
 			path = Audio;
 			sourceTree = "<group>";
@@ -169,8 +169,8 @@
 		A24F998A2B31E79A00125F58 /* Photo */ = {
 			isa = PBXGroup;
 			children = (
-				A2EDC5142B2A746500E57B5D /* PhotoDetailView.swift */,
 				A246569C2B2A67040091BA52 /* PhotoListView.swift */,
+				A2EDC5142B2A746500E57B5D /* PhotoDetailView.swift */,
 				A2EDC51A2B2A780900E57B5D /* PhotoCameraView.swift */,
 			);
 			path = Photo;
