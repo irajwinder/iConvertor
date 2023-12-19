@@ -1,0 +1,18 @@
+//
+//  VideoDetailView.swift
+//  iConvertor
+//
+//  Created by Rajwinder Singh on 12/13/23.
+//
+
+import SwiftUI
+
+struct VideoDetailView: View {
+    var body: some View {
+        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+    }
+}
+
+#Preview {
+    VideoDetailView()
+}

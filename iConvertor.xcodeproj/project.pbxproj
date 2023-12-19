@@ -7,22 +7,59 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A24656992B2A66EA0091BA52 /* AudioListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A24656982B2A66EA0091BA52 /* AudioListView.swift */; };
+		A246569B2B2A66F80091BA52 /* VideoListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A246569A2B2A66F80091BA52 /* VideoListView.swift */; };
+		A246569D2B2A67040091BA52 /* PhotoListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A246569C2B2A67040091BA52 /* PhotoListView.swift */; };
+		A24656A02B2A67380091BA52 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A246569F2B2A67380091BA52 /* NetworkManager.swift */; };
+		A24656A22B2A67470091BA52 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A24656A12B2A67470091BA52 /* APIManager.swift */; };
+		A24656A42B2A67560091BA52 /* CacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A24656A32B2A67560091BA52 /* CacheManager.swift */; };
+		A24656A82B2A67A00091BA52 /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A24656A72B2A67A00091BA52 /* TabBarView.swift */; };
+		A24656AC2B2A67E10091BA52 /* Component.swift in Sources */ = {isa = PBXBuildFile; fileRef = A24656AB2B2A67E10091BA52 /* Component.swift */; };
+		A24656AE2B2A69250091BA52 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = A24656AD2B2A69250091BA52 /* Constant.swift */; };
+		A24656B22B2A697C0091BA52 /* FileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A24656B12B2A697C0091BA52 /* FileManager.swift */; };
+		A24656B42B2A698C0091BA52 /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A24656B32B2A698C0091BA52 /* Validation.swift */; };
+		A2DE61B72B2FB1E8009DFE09 /* AudioManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2DE61B62B2FB1E8009DFE09 /* AudioManager.swift */; };
+		A2DE61B92B2FBC36009DFE09 /* VideoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2DE61B82B2FBC36009DFE09 /* VideoManager.swift */; };
+		A2DE61BB2B2FF08C009DFE09 /* PhotoViewIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2DE61BA2B2FF08C009DFE09 /* PhotoViewIntent.swift */; };
+		A2DE61BD2B306539009DFE09 /* VideoViewIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2DE61BC2B306538009DFE09 /* VideoViewIntent.swift */; };
+		A2EDC5112B2A743A00E57B5D /* AudioDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2EDC5102B2A743A00E57B5D /* AudioDetailView.swift */; };
+		A2EDC5132B2A744A00E57B5D /* VideoDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2EDC5122B2A744A00E57B5D /* VideoDetailView.swift */; };
+		A2EDC5152B2A746500E57B5D /* PhotoDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2EDC5142B2A746500E57B5D /* PhotoDetailView.swift */; };
+		A2EDC5192B2A778000E57B5D /* VideoRecordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2EDC5182B2A778000E57B5D /* VideoRecordView.swift */; };
+		A2EDC51B2B2A780900E57B5D /* PhotoCameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2EDC51A2B2A780900E57B5D /* PhotoCameraView.swift */; };
+		A2EDC51F2B2A799E00E57B5D /* AudioRecordIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2EDC51E2B2A799E00E57B5D /* AudioRecordIntent.swift */; };
 		A2F6BC102B2A647A00DD4FD4 /* iConvertorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F6BC0F2B2A647A00DD4FD4 /* iConvertorApp.swift */; };
-		A2F6BC122B2A647A00DD4FD4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F6BC112B2A647A00DD4FD4 /* ContentView.swift */; };
 		A2F6BC142B2A647C00DD4FD4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A2F6BC132B2A647C00DD4FD4 /* Assets.xcassets */; };
 		A2F6BC172B2A647C00DD4FD4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A2F6BC162B2A647C00DD4FD4 /* Preview Assets.xcassets */; };
-		A2F6BC192B2A647C00DD4FD4 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F6BC182B2A647C00DD4FD4 /* Persistence.swift */; };
-		A2F6BC1C2B2A647C00DD4FD4 /* iConvertor.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A2F6BC1A2B2A647C00DD4FD4 /* iConvertor.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A24656922B2A65940091BA52 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A24656982B2A66EA0091BA52 /* AudioListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioListView.swift; sourceTree = "<group>"; };
+		A246569A2B2A66F80091BA52 /* VideoListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoListView.swift; sourceTree = "<group>"; };
+		A246569C2B2A67040091BA52 /* PhotoListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoListView.swift; sourceTree = "<group>"; };
+		A246569F2B2A67380091BA52 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		A24656A12B2A67470091BA52 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		A24656A32B2A67560091BA52 /* CacheManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheManager.swift; sourceTree = "<group>"; };
+		A24656A72B2A67A00091BA52 /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
+		A24656AB2B2A67E10091BA52 /* Component.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Component.swift; sourceTree = "<group>"; };
+		A24656AD2B2A69250091BA52 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		A24656B12B2A697C0091BA52 /* FileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManager.swift; sourceTree = "<group>"; };
+		A24656B32B2A698C0091BA52 /* Validation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validation.swift; sourceTree = "<group>"; };
+		A2DE61B62B2FB1E8009DFE09 /* AudioManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioManager.swift; sourceTree = "<group>"; };
+		A2DE61B82B2FBC36009DFE09 /* VideoManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoManager.swift; sourceTree = "<group>"; };
+		A2DE61BA2B2FF08C009DFE09 /* PhotoViewIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewIntent.swift; sourceTree = "<group>"; };
+		A2DE61BC2B306538009DFE09 /* VideoViewIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoViewIntent.swift; sourceTree = "<group>"; };
+		A2EDC5102B2A743A00E57B5D /* AudioDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioDetailView.swift; sourceTree = "<group>"; };
+		A2EDC5122B2A744A00E57B5D /* VideoDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoDetailView.swift; sourceTree = "<group>"; };
+		A2EDC5142B2A746500E57B5D /* PhotoDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailView.swift; sourceTree = "<group>"; };
+		A2EDC5182B2A778000E57B5D /* VideoRecordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoRecordView.swift; sourceTree = "<group>"; };
+		A2EDC51A2B2A780900E57B5D /* PhotoCameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCameraView.swift; sourceTree = "<group>"; };
+		A2EDC51E2B2A799E00E57B5D /* AudioRecordIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioRecordIntent.swift; sourceTree = "<group>"; };
 		A2F6BC0C2B2A647A00DD4FD4 /* iConvertor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iConvertor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2F6BC0F2B2A647A00DD4FD4 /* iConvertorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iConvertorApp.swift; sourceTree = "<group>"; };
-		A2F6BC112B2A647A00DD4FD4 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		A2F6BC132B2A647C00DD4FD4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A2F6BC162B2A647C00DD4FD4 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		A2F6BC182B2A647C00DD4FD4 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
-		A2F6BC1B2B2A647C00DD4FD4 /* iConvertor.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = iConvertor.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -36,6 +73,109 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A24656932B2A65E10091BA52 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		A24656942B2A65EE0091BA52 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A24F99882B31E77800125F58 /* Audio */,
+				A24F99892B31E78500125F58 /* Video */,
+				A24F998A2B31E79A00125F58 /* Photo */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A24656952B2A65F30091BA52 /* Intent */ = {
+			isa = PBXGroup;
+			children = (
+				A2EDC51E2B2A799E00E57B5D /* AudioRecordIntent.swift */,
+				A2DE61BC2B306538009DFE09 /* VideoViewIntent.swift */,
+				A2DE61BA2B2FF08C009DFE09 /* PhotoViewIntent.swift */,
+			);
+			path = Intent;
+			sourceTree = "<group>";
+		};
+		A246569E2B2A67290091BA52 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				A246569F2B2A67380091BA52 /* NetworkManager.swift */,
+				A24656A12B2A67470091BA52 /* APIManager.swift */,
+				A24656A32B2A67560091BA52 /* CacheManager.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		A24656A52B2A67700091BA52 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				A24656B12B2A697C0091BA52 /* FileManager.swift */,
+				A2DE61B62B2FB1E8009DFE09 /* AudioManager.swift */,
+				A2DE61B82B2FBC36009DFE09 /* VideoManager.swift */,
+				A24656AD2B2A69250091BA52 /* Constant.swift */,
+				A24656B32B2A698C0091BA52 /* Validation.swift */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
+		A24656A62B2A677A0091BA52 /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				A24656A72B2A67A00091BA52 /* TabBarView.swift */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
+		A24656A92B2A67AC0091BA52 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				A2F6BC0F2B2A647A00DD4FD4 /* iConvertorApp.swift */,
+				A2F6BC132B2A647C00DD4FD4 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		A24656AA2B2A67BB0091BA52 /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				A24656AB2B2A67E10091BA52 /* Component.swift */,
+			);
+			path = Component;
+			sourceTree = "<group>";
+		};
+		A24F99882B31E77800125F58 /* Audio */ = {
+			isa = PBXGroup;
+			children = (
+				A2EDC5102B2A743A00E57B5D /* AudioDetailView.swift */,
+				A24656982B2A66EA0091BA52 /* AudioListView.swift */,
+			);
+			path = Audio;
+			sourceTree = "<group>";
+		};
+		A24F99892B31E78500125F58 /* Video */ = {
+			isa = PBXGroup;
+			children = (
+				A246569A2B2A66F80091BA52 /* VideoListView.swift */,
+				A2EDC5122B2A744A00E57B5D /* VideoDetailView.swift */,
+				A2EDC5182B2A778000E57B5D /* VideoRecordView.swift */,
+			);
+			path = Video;
+			sourceTree = "<group>";
+		};
+		A24F998A2B31E79A00125F58 /* Photo */ = {
+			isa = PBXGroup;
+			children = (
+				A2EDC5142B2A746500E57B5D /* PhotoDetailView.swift */,
+				A246569C2B2A67040091BA52 /* PhotoListView.swift */,
+				A2EDC51A2B2A780900E57B5D /* PhotoCameraView.swift */,
+			);
+			path = Photo;
+			sourceTree = "<group>";
+		};
 		A2F6BC032B2A647A00DD4FD4 = {
 			isa = PBXGroup;
 			children = (
@@ -55,11 +195,15 @@
 		A2F6BC0E2B2A647A00DD4FD4 /* iConvertor */ = {
 			isa = PBXGroup;
 			children = (
-				A2F6BC0F2B2A647A00DD4FD4 /* iConvertorApp.swift */,
-				A2F6BC112B2A647A00DD4FD4 /* ContentView.swift */,
-				A2F6BC132B2A647C00DD4FD4 /* Assets.xcassets */,
-				A2F6BC182B2A647C00DD4FD4 /* Persistence.swift */,
-				A2F6BC1A2B2A647C00DD4FD4 /* iConvertor.xcdatamodeld */,
+				A24656932B2A65E10091BA52 /* Model */,
+				A24656942B2A65EE0091BA52 /* View */,
+				A24656952B2A65F30091BA52 /* Intent */,
+				A24656A52B2A67700091BA52 /* Utility */,
+				A246569E2B2A67290091BA52 /* Service */,
+				A24656AA2B2A67BB0091BA52 /* Component */,
+				A24656A62B2A677A0091BA52 /* TabBar */,
+				A24656A92B2A67AC0091BA52 /* Resources */,
+				A24656922B2A65940091BA52 /* Info.plist */,
 				A2F6BC152B2A647C00DD4FD4 /* Preview Content */,
 			);
 			path = iConvertor;
@@ -143,9 +287,27 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A2F6BC192B2A647C00DD4FD4 /* Persistence.swift in Sources */,
-				A2F6BC122B2A647A00DD4FD4 /* ContentView.swift in Sources */,
-				A2F6BC1C2B2A647C00DD4FD4 /* iConvertor.xcdatamodeld in Sources */,
+				A24656B22B2A697C0091BA52 /* FileManager.swift in Sources */,
+				A2EDC5132B2A744A00E57B5D /* VideoDetailView.swift in Sources */,
+				A246569B2B2A66F80091BA52 /* VideoListView.swift in Sources */,
+				A24656AC2B2A67E10091BA52 /* Component.swift in Sources */,
+				A24656A82B2A67A00091BA52 /* TabBarView.swift in Sources */,
+				A2EDC51F2B2A799E00E57B5D /* AudioRecordIntent.swift in Sources */,
+				A2EDC5112B2A743A00E57B5D /* AudioDetailView.swift in Sources */,
+				A2EDC5152B2A746500E57B5D /* PhotoDetailView.swift in Sources */,
+				A24656B42B2A698C0091BA52 /* Validation.swift in Sources */,
+				A246569D2B2A67040091BA52 /* PhotoListView.swift in Sources */,
+				A24656A22B2A67470091BA52 /* APIManager.swift in Sources */,
+				A24656992B2A66EA0091BA52 /* AudioListView.swift in Sources */,
+				A2EDC5192B2A778000E57B5D /* VideoRecordView.swift in Sources */,
+				A2DE61BB2B2FF08C009DFE09 /* PhotoViewIntent.swift in Sources */,
+				A2DE61B92B2FBC36009DFE09 /* VideoManager.swift in Sources */,
+				A24656A02B2A67380091BA52 /* NetworkManager.swift in Sources */,
+				A2DE61B72B2FB1E8009DFE09 /* AudioManager.swift in Sources */,
+				A24656A42B2A67560091BA52 /* CacheManager.swift in Sources */,
+				A2EDC51B2B2A780900E57B5D /* PhotoCameraView.swift in Sources */,
+				A24656AE2B2A69250091BA52 /* Constant.swift in Sources */,
+				A2DE61BD2B306539009DFE09 /* VideoViewIntent.swift in Sources */,
 				A2F6BC102B2A647A00DD4FD4 /* iConvertorApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -283,9 +445,12 @@
 				DEVELOPMENT_TEAM = AJ6UG629X6;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = iConvertor/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Camera persmission is needed to save Photo(s)";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Microphone persmission is needed to record Audio(s)";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Photo Library persmission is needed to save Videos(s)";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -312,9 +477,12 @@
 				DEVELOPMENT_TEAM = AJ6UG629X6;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = iConvertor/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Camera persmission is needed to save Photo(s)";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Microphone persmission is needed to record Audio(s)";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Photo Library persmission is needed to save Videos(s)";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -352,19 +520,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		A2F6BC1A2B2A647C00DD4FD4 /* iConvertor.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				A2F6BC1B2B2A647C00DD4FD4 /* iConvertor.xcdatamodel */,
-			);
-			currentVersion = A2F6BC1B2B2A647C00DD4FD4 /* iConvertor.xcdatamodel */;
-			path = iConvertor.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = A2F6BC042B2A647A00DD4FD4 /* Project object */;
 }
