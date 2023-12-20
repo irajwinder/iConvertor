@@ -88,7 +88,7 @@ class FileManagerClass: NSObject {
     func saveImageToFileManager(_ imageData: Data) {
         let folderName = FileConstants.imageFolderName
         let fileExtension = FileConstants.imageFileExtension
-        let fileURL = saveDataToFileManager(folderName: folderName, data: imageData, fileExtension: fileExtension)
+        _ = saveDataToFileManager(folderName: folderName, data: imageData, fileExtension: fileExtension)
     }
     
     func loadImageDataFromFileManager() -> [URL]? {
@@ -103,7 +103,7 @@ class FileManagerClass: NSObject {
     func saveVideoToFileManager(_ videoData: Data) {
         let folderName = FileConstants.videoFolderName
         let fileExtension = FileConstants.videoFileExtension
-        let fileURL = saveDataToFileManager(folderName: folderName, data: videoData, fileExtension: fileExtension)
+        _ = saveDataToFileManager(folderName: folderName, data: videoData, fileExtension: fileExtension)
     }
     
     func loadVideoDataFromFileManager() -> [URL]? {

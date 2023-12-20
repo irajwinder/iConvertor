@@ -20,6 +20,15 @@ struct AudioDetailView: View {
                     .foregroundColor(.blue)
             }
             .navigationTitle("Audio Detail")
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button(action: {
+                        MediaManager.shareViaOtherApps(fileURL: audioURL)
+                    }) {
+                        Label("Share", systemImage: "square.and.arrow.up")
+                    }
+                }
+            }
             .padding()
         }
     }

@@ -14,6 +14,15 @@ struct PhotoDetailView: View {
         Image(uiImage: (UIImage(contentsOfFile: imageURL.path) ?? UIImage(systemName: "photo"))!)
             .resizable()
             .scaledToFit()
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button(action: {
+                        MediaManager.shareViaOtherApps(fileURL: imageURL)
+                    }) {
+                        Label("Share", systemImage: "square.and.arrow.up")
+                    }
+                }
+            }
             .navigationTitle("Photo Detail")
     }
 }

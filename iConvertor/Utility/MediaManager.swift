@@ -9,6 +9,14 @@ import Foundation
 import AVKit
 
 class MediaManager {
+    private static func getCurrentWindow() -> UIWindow? {
+        guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene else {
+            return nil
+        }
+        // Get the first window in the window scene
+        return windowScene.windows.first
+    }
+    
     static func playMedia(mediaURL: URL) {
         // Create an AVPlayer with the mediaURL
         let mediaPlayer = AVPlayer(url: mediaURL)
@@ -16,14 +24,19 @@ class MediaManager {
         playerViewController.player = mediaPlayer
         
         // Get the current window scene
-        if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene {
-            // Get the first window in the window scene
-            if let window = windowScene.windows.first {
-                // Present the Media Player and start playing
-                window.rootViewController?.present(playerViewController, animated: true, completion: {
-                    mediaPlayer.play()
-                })
+        if let window = getCurrentWindow() {
+            window.rootViewController?.present(playerViewController, animated: true) {
+                mediaPlayer.play()
             }
+        }
+    }
+    
+    static func shareViaOtherApps(fileURL: URL) {
+        let activityViewController = UIActivityViewController(activityItems: [fileURL], applicationActivities: nil)
+        
+        // Get the current window scene
+        if let window = getCurrentWindow() {
+            window.rootViewController?.present(activityViewController, animated: true, completion: nil)
         }
     }
 }

@@ -7,7 +7,6 @@
 
 import SwiftUI
 import AVKit
-import MobileCoreServices
 
 struct ImagePicker: UIViewControllerRepresentable {
     @Environment(\.presentationMode) var presentationMode
@@ -70,7 +69,7 @@ struct VideoPicker: UIViewControllerRepresentable {
         let picker = UIImagePickerController()
         picker.delegate = context.coordinator
         picker.sourceType = sourceType
-        picker.mediaTypes = [kUTTypeMovie as String] // Specify that only videos are allowed
+        picker.mediaTypes = [UTType.movie.identifier] // Specify that only videos are allowed
         return picker
     }
     

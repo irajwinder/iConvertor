@@ -20,6 +20,15 @@ struct VideoDetailView: View {
                     .foregroundColor(.blue)
             }
             .navigationTitle("Video Detail")
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button(action: {
+                        MediaManager.shareViaOtherApps(fileURL: videoURL)
+                    }) {
+                        Label("Share", systemImage: "square.and.arrow.up")
+                    }
+                }
+            }
             .padding()
         }
     }
