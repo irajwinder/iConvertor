@@ -32,5 +32,3 @@ class CacheManager: NSObject {
         cache.setObject(imageData as NSData, forKey: key as NSString)
     }
 }
-
-let cacheManagerInstance = CacheManager.sharedInstance
