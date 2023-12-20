@@ -9,7 +9,6 @@ import Foundation
 
 class PhotoViewIntent: ObservableObject {
     @Published var photos: [URL] = []
-    @Published var isPhotoLibraryPermissionGranted: Bool = false
     
     func fetchImages() {
         if let imageURLs = fileManagerClassInstance.loadImageDataFromFileManager() {

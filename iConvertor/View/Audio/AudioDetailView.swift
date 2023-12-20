@@ -13,9 +13,7 @@ struct AudioDetailView: View {
     var body: some View {
         VStack {
             Button(action: {
-                if let rootViewController = UIApplication.shared.windows.first?.rootViewController {
-                    audioManagerInstance.playAudio(audioUrl: audioURL, viewController: rootViewController)
-                }
+                MediaManager.playMedia(mediaURL: audioURL)
             }) {
                 Label("Play Audio", systemImage: "play.circle")
                     .font(.headline)

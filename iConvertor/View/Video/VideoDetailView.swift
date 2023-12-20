@@ -8,11 +8,23 @@
 import SwiftUI
 
 struct VideoDetailView: View {
+    var videoURL: URL
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            Button(action: {
+                MediaManager.playMedia(mediaURL: videoURL)
+            }) {
+                Label("Play Video", systemImage: "play.circle")
+                    .font(.headline)
+                    .foregroundColor(.blue)
+            }
+            .navigationTitle("Video Detail")
+            .padding()
+        }
     }
 }
 
 #Preview {
-    VideoDetailView()
+    VideoDetailView(videoURL: URL(fileURLWithPath: ""))
 }

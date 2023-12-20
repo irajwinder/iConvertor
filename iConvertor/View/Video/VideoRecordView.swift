@@ -8,30 +8,51 @@
 import SwiftUI
 
 struct VideoRecordView: View {
-    @StateObject private var stateObject = VideoRecorder()
-    @State private var isRecording = false
+    @Environment(\.presentationMode) var presentationMode
+    @ObservedObject var observedObject: VideoViewIntent
+    
+    @State private var recordedVideoURL: URL?
+    @State private var showCameraPicker = false
+    @State private var showLibraryPicker = false
     
     var body: some View {
         VStack {
-            Button(action: {
-                if isRecording {
-                    stateObject.stopRecording()
-                } else {
-                    stateObject.startRecording()
+            if let videoURL = recordedVideoURL {
+                // Display the recorded video
+                AVPlayerController(url: videoURL)
+                    .frame(height: 300)
+                
+                Button("Save Video") {
+                    if let videoData = try? Data(contentsOf: videoURL) {
+                        // Handle saving the recorded video
+                        fileManagerClassInstance.saveVideoToFileManager(videoData)
+                        observedObject.fetchVideos()
+                        presentationMode.wrappedValue.dismiss()
+                    } else {
+                        print("Error reading video data.")
+                    }
                 }
-                isRecording.toggle()
-            }) {
-                Image(systemName: isRecording ? "stop.circle" : "video.fill")
-                    .font(.system(size: 40))
-                    .foregroundColor(isRecording ? .red : .green)
+            } else {
+                VStack(spacing: 30) {
+                    Button("Record Video") {
+                        showCameraPicker.toggle()
+                    }
+                    
+                    Button("Choose from Library") {
+                        showLibraryPicker.toggle()
+                    }
+                }
             }
         }
-        .onAppear {
-            stateObject.setupCamera()
+        .sheet(isPresented: $showCameraPicker) {
+            VideoPicker(pickedVideoURL: $recordedVideoURL, sourceType: .camera)
+        }
+        .sheet(isPresented: $showLibraryPicker) {
+            VideoPicker(pickedVideoURL: $recordedVideoURL, sourceType: .photoLibrary)
         }
     }
 }
 
 #Preview {
-    VideoRecordView()
+    VideoRecordView(observedObject: VideoViewIntent())
 }

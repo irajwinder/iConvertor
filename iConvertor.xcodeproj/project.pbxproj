@@ -18,8 +18,7 @@
 		A24656AE2B2A69250091BA52 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = A24656AD2B2A69250091BA52 /* Constant.swift */; };
 		A24656B22B2A697C0091BA52 /* FileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A24656B12B2A697C0091BA52 /* FileManager.swift */; };
 		A24656B42B2A698C0091BA52 /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A24656B32B2A698C0091BA52 /* Validation.swift */; };
-		A2DE61B72B2FB1E8009DFE09 /* AudioManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2DE61B62B2FB1E8009DFE09 /* AudioManager.swift */; };
-		A2DE61B92B2FBC36009DFE09 /* VideoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2DE61B82B2FBC36009DFE09 /* VideoManager.swift */; };
+		A2DE61B72B2FB1E8009DFE09 /* MediaManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2DE61B62B2FB1E8009DFE09 /* MediaManager.swift */; };
 		A2DE61BB2B2FF08C009DFE09 /* PhotoViewIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2DE61BA2B2FF08C009DFE09 /* PhotoViewIntent.swift */; };
 		A2DE61BD2B306539009DFE09 /* VideoViewIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2DE61BC2B306538009DFE09 /* VideoViewIntent.swift */; };
 		A2EDC5112B2A743A00E57B5D /* AudioDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2EDC5102B2A743A00E57B5D /* AudioDetailView.swift */; };
@@ -46,8 +45,7 @@
 		A24656AD2B2A69250091BA52 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		A24656B12B2A697C0091BA52 /* FileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManager.swift; sourceTree = "<group>"; };
 		A24656B32B2A698C0091BA52 /* Validation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validation.swift; sourceTree = "<group>"; };
-		A2DE61B62B2FB1E8009DFE09 /* AudioManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioManager.swift; sourceTree = "<group>"; };
-		A2DE61B82B2FBC36009DFE09 /* VideoManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoManager.swift; sourceTree = "<group>"; };
+		A2DE61B62B2FB1E8009DFE09 /* MediaManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaManager.swift; sourceTree = "<group>"; };
 		A2DE61BA2B2FF08C009DFE09 /* PhotoViewIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewIntent.swift; sourceTree = "<group>"; };
 		A2DE61BC2B306538009DFE09 /* VideoViewIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoViewIntent.swift; sourceTree = "<group>"; };
 		A2EDC5102B2A743A00E57B5D /* AudioDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioDetailView.swift; sourceTree = "<group>"; };
@@ -114,8 +112,7 @@
 			isa = PBXGroup;
 			children = (
 				A24656B12B2A697C0091BA52 /* FileManager.swift */,
-				A2DE61B62B2FB1E8009DFE09 /* AudioManager.swift */,
-				A2DE61B82B2FBC36009DFE09 /* VideoManager.swift */,
+				A2DE61B62B2FB1E8009DFE09 /* MediaManager.swift */,
 				A24656AD2B2A69250091BA52 /* Constant.swift */,
 				A24656B32B2A698C0091BA52 /* Validation.swift */,
 			);
@@ -160,8 +157,8 @@
 			isa = PBXGroup;
 			children = (
 				A246569A2B2A66F80091BA52 /* VideoListView.swift */,
-				A2EDC5122B2A744A00E57B5D /* VideoDetailView.swift */,
 				A2EDC5182B2A778000E57B5D /* VideoRecordView.swift */,
+				A2EDC5122B2A744A00E57B5D /* VideoDetailView.swift */,
 			);
 			path = Video;
 			sourceTree = "<group>";
@@ -170,8 +167,8 @@
 			isa = PBXGroup;
 			children = (
 				A246569C2B2A67040091BA52 /* PhotoListView.swift */,
-				A2EDC5142B2A746500E57B5D /* PhotoDetailView.swift */,
 				A2EDC51A2B2A780900E57B5D /* PhotoCameraView.swift */,
+				A2EDC5142B2A746500E57B5D /* PhotoDetailView.swift */,
 			);
 			path = Photo;
 			sourceTree = "<group>";
@@ -301,9 +298,8 @@
 				A24656992B2A66EA0091BA52 /* AudioListView.swift in Sources */,
 				A2EDC5192B2A778000E57B5D /* VideoRecordView.swift in Sources */,
 				A2DE61BB2B2FF08C009DFE09 /* PhotoViewIntent.swift in Sources */,
-				A2DE61B92B2FBC36009DFE09 /* VideoManager.swift in Sources */,
 				A24656A02B2A67380091BA52 /* NetworkManager.swift in Sources */,
-				A2DE61B72B2FB1E8009DFE09 /* AudioManager.swift in Sources */,
+				A2DE61B72B2FB1E8009DFE09 /* MediaManager.swift in Sources */,
 				A24656A42B2A67560091BA52 /* CacheManager.swift in Sources */,
 				A2EDC51B2B2A780900E57B5D /* PhotoCameraView.swift in Sources */,
 				A24656AE2B2A69250091BA52 /* Constant.swift in Sources */,

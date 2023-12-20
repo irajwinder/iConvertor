@@ -8,20 +8,30 @@
 import SwiftUI
 
 struct VideoListView: View {
-    @State private var videos = [1, 2, 3, 4]
+    @StateObject private var stateObject = VideoViewIntent()
     @State private var isRecordingViewPresented = false
     
     var body: some View {
         NavigationStack {
-            List {
-                ForEach(videos.indices, id: \.self) { video in
-                    NavigationLink {
-                        VideoDetailView()
-                    } label: {
-                        Text("Video \(videos[video])")
+            VStack {
+                if stateObject.videos.isEmpty {
+                    Spacer()
+                    Text("No video available")
+                        .foregroundColor(.gray)
+                        .padding()
+                    Spacer()
+                } else {
+                    List {
+                        ForEach(stateObject.videos, id: \.self) { videoURL in
+                            NavigationLink {
+                                VideoDetailView(videoURL: videoURL)
+                            } label: {
+                                Text(videoURL.lastPathComponent)
+                            }
+                        }
+                        .onDelete(perform: stateObject.deleteVideo)
                     }
                 }
-                .onDelete(perform: deleteVideo)
             }
             .navigationTitle("Video")
             .toolbar {
@@ -32,15 +42,14 @@ struct VideoListView: View {
                         Label("Record", systemImage: "video.fill")
                     }
                     .sheet(isPresented: $isRecordingViewPresented) {
-                        VideoRecordView()
+                        VideoRecordView(observedObject: stateObject)
                     }
                 }
             }
+            .onAppear {
+                stateObject.fetchVideos()
+            }
         }
-    }
-    
-    func deleteVideo(offsets: IndexSet) {
-        
     }
 }
 
