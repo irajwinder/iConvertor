@@ -25,7 +25,7 @@ struct VideoRecordView: View {
                 Button("Save Video") {
                     if let videoData = try? Data(contentsOf: videoURL) {
                         // Handle saving the recorded video
-                        fileManagerClassInstance.saveVideoToFileManager(videoData)
+                        FileManagerClass.sharedInstance.saveVideoToFileManager(videoData)
                         observedObject.fetchVideos()
                         presentationMode.wrappedValue.dismiss()
                     } else {

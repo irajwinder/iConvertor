@@ -26,7 +26,7 @@ struct PhotoCameraView: View {
                 
                 Button("Save Image") {
                     if let imageData = imageData {
-                        fileManagerClassInstance.saveImageToFileManager(imageData)
+                        FileManagerClass.sharedInstance.saveImageToFileManager(imageData)
                         observedObject.fetchImages()
                         presentationMode.wrappedValue.dismiss()
                     }

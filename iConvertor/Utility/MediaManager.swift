@@ -15,9 +15,15 @@ class MediaManager {
         let playerViewController = AVPlayerViewController()
         playerViewController.player = mediaPlayer
         
-        // Present the Media Player and start playing
-        UIApplication.shared.windows.first?.rootViewController?.present(playerViewController, animated: true, completion: {
-            mediaPlayer.play()
-        })
+        // Get the current window scene
+        if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene {
+            // Get the first window in the window scene
+            if let window = windowScene.windows.first {
+                // Present the Media Player and start playing
+                window.rootViewController?.present(playerViewController, animated: true, completion: {
+                    mediaPlayer.play()
+                })
+            }
+        }
     }
 }

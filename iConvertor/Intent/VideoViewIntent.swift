@@ -20,7 +20,7 @@ class VideoViewIntent: ObservableObject {
         // Get the selected video file URL from the index
         let selectedVideoURL = videos[offsets.first!]
         // Delete the video file using FileManager
-        fileManagerClassInstance.deleteVideoFromFileManager(videoURL: selectedVideoURL)
+        FileManagerClass.sharedInstance.deleteVideoFromFileManager(videoURL: selectedVideoURL)
         // Update the videos array to reflect the changes
         videos.remove(atOffsets: offsets)
     }

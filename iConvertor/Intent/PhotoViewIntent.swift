@@ -11,7 +11,7 @@ class PhotoViewIntent: ObservableObject {
     @Published var photos: [URL] = []
     
     func fetchImages() {
-        if let imageURLs = fileManagerClassInstance.loadImageDataFromFileManager() {
+        if let imageURLs = FileManagerClass.sharedInstance.loadImageDataFromFileManager() {
             self.photos = imageURLs
         }
     }
@@ -20,7 +20,7 @@ class PhotoViewIntent: ObservableObject {
         // Get the selected photo file URL from the index
         let selectedImageURL = photos[offsets.first!]
         // Delete the photo file using FileManager
-        fileManagerClassInstance.deleteImageFromFileManager(imageURL: selectedImageURL)
+        FileManagerClass.sharedInstance.deleteImageFromFileManager(imageURL: selectedImageURL)
         // Update the photos array to reflect the changes
         photos.remove(atOffsets: offsets)
     }

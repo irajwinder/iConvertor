@@ -18,142 +18,99 @@ class FileManagerClass: NSObject {
         super.init()
     }
     
-    func saveAudioToFileManager() -> String? {
-        // folder name and file name
-        let folderName = "AudioFiles"
-        let audioFilename = UUID().uuidString + ".wav"
-        let relativeURL = "\(folderName)/\(audioFilename)"
+    private func documentsDirectoryURL() -> URL {
+        return FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
+    }
+    
+    private func saveDataToFileManager(folderName: String, data: Data, fileExtension: String) -> String? {
+        let filename = UUID().uuidString + fileExtension
+        let relativeURL = "\(folderName)/\(filename)"
         
         do {
             // Get the documents directory URL
-            let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
+            let documentsDirectory = documentsDirectoryURL()
             let fileURL = documentsDirectory.appendingPathComponent(relativeURL)
             
             // Create the necessary directory structure if it doesn't exist
             try FileManager.default.createDirectory(at: fileURL.deletingLastPathComponent(), withIntermediateDirectories: true, attributes: nil)
+            
+            // Write the data to the file at the specified URL
+            try data.write(to: fileURL)
             
             return fileURL.path
         } catch {
-            // Print an error message if any issues occur during the audio-saving process
-            print("Error saving audio:", error.localizedDescription)
+            // Print an error message if any issues occur during the saving process
+            print("Error saving data:", error.localizedDescription)
+            return ""
+        }
+    }
+    
+    private func loadFilesFromFolder(folderName: String) -> [URL]? {
+        do {
+            // Get the documents directory URL
+            let documentsDirectory = documentsDirectoryURL()
+            // Get contents of the specified directory
+            let filesURL = documentsDirectory.appendingPathComponent(folderName)
+            let fileURLs = try FileManager.default.contentsOfDirectory(at: filesURL, includingPropertiesForKeys: nil)
+            
+            return fileURLs
+        } catch {
+            print("Error getting file URLs:", error.localizedDescription)
             return nil
         }
+    }
+    
+    private func deleteFile(at fileURL: URL) {
+        do {
+            try FileManager.default.removeItem(at: fileURL)
+            print("File deleted from file manager:", fileURL)
+        } catch {
+            print("Error deleting file from file manager:", error.localizedDescription)
+        }
+    }
+    
+    // Audio methods
+    func saveAudioToFileManager() -> String? {
+        let folderName = FileConstants.audioFolderName
+        let fileExtension = FileConstants.audioFileExtension
+        return saveDataToFileManager(folderName: folderName, data: Data(), fileExtension: fileExtension)
     }
     
     func loadAudioDataFromFileManager() -> [URL]? {
-        do {
-            // Get the documents directory URL
-            let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
-            // Get contents of the "AudioFiles" directory
-            let audioFilesURL = documentsDirectory.appendingPathComponent("AudioFiles")
-            let audioFileURLs = try FileManager.default.contentsOfDirectory(at: audioFilesURL, includingPropertiesForKeys: nil)
-            
-            return audioFileURLs
-        } catch {
-            print("Error getting audio file URLs:", error.localizedDescription)
-            return nil
-        }
+        return loadFilesFromFolder(folderName: FileConstants.audioFolderName)
     }
     
     func deleteAudioFromFileManager(audioURL: URL) {
-        do {
-            try FileManager.default.removeItem(at: audioURL)
-            print("Audio deleted from file manager:", audioURL)
-        } catch {
-            print("Error deleting audio from file manager:", error.localizedDescription)
-        }
+        deleteFile(at: audioURL)
     }
     
+    // Image methods
     func saveImageToFileManager(_ imageData: Data) {
-        let folderName = "PhotoLibrary"
-        let imageFilename = UUID().uuidString + ".jpg"
-        let relativeURL = "\(folderName)/\(imageFilename)"
-        
-        do {
-            // Get the documents directory URL
-            let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
-            let fileURL = documentsDirectory.appendingPathComponent(relativeURL)
-            
-            // Create the necessary directory structure if it doesn't exist
-            try FileManager.default.createDirectory(at: fileURL.deletingLastPathComponent(), withIntermediateDirectories: true, attributes: nil)
-            
-            // Write the image data to the file at the specified URL
-            try imageData.write(to: fileURL)
-        } catch {
-            // Print an error message if any issues occur during the image-saving process
-            print("Error saving image:", error.localizedDescription)
-        }
+        let folderName = FileConstants.imageFolderName
+        let fileExtension = FileConstants.imageFileExtension
+        let fileURL = saveDataToFileManager(folderName: folderName, data: imageData, fileExtension: fileExtension)
     }
     
     func loadImageDataFromFileManager() -> [URL]? {
-        do {
-            // Get the documents directory URL
-            let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
-            // Get contents of the "PhotoLibrary" directory
-            let photoFilesURL = documentsDirectory.appendingPathComponent("PhotoLibrary")
-            let photoFileURLs = try FileManager.default.contentsOfDirectory(at: photoFilesURL, includingPropertiesForKeys: nil)
-            
-            return photoFileURLs
-        } catch {
-            print("Error getting photo file URLs:", error.localizedDescription)
-            return nil
-        }
+        return loadFilesFromFolder(folderName: FileConstants.imageFolderName)
     }
     
     func deleteImageFromFileManager(imageURL: URL) {
-        do {
-            try FileManager.default.removeItem(at: imageURL)
-            print("Image deleted from file manager:", imageURL)
-        } catch {
-            print("Error deleting image from file manager:", error.localizedDescription)
-        }
+        deleteFile(at: imageURL)
     }
     
+    // Video methods
     func saveVideoToFileManager(_ videoData: Data) {
-        let folderName = "VideoFiles"
-        let videoFilename = UUID().uuidString + ".mp4"
-        let relativeURL = "\(folderName)/\(videoFilename)"
-        
-        do {
-            // Get the documents directory URL
-            let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
-            let fileURL = documentsDirectory.appendingPathComponent(relativeURL)
-            
-            // Create the necessary directory structure if it doesn't exist
-            try FileManager.default.createDirectory(at: fileURL.deletingLastPathComponent(), withIntermediateDirectories: true, attributes: nil)
-            
-            // Write the video data to the file at the specified URL
-            try videoData.write(to: fileURL)
-        } catch {
-            // Print an error message if any issues occur during the video-saving process
-            print("Error saving video:", error.localizedDescription)
-        }
+        let folderName = FileConstants.videoFolderName
+        let fileExtension = FileConstants.videoFileExtension
+        let fileURL = saveDataToFileManager(folderName: folderName, data: videoData, fileExtension: fileExtension)
     }
     
     func loadVideoDataFromFileManager() -> [URL]? {
-        do {
-            // Get the documents directory URL
-            let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
-            // Get contents of the "VideoFiles" directory
-            let videoFilesURL = documentsDirectory.appendingPathComponent("VideoFiles")
-            let videoFileURLs = try FileManager.default.contentsOfDirectory(at: videoFilesURL, includingPropertiesForKeys: nil)
-            
-            return videoFileURLs
-        } catch {
-            print("Error getting video file URLs:", error.localizedDescription)
-            return nil
-        }
+        return loadFilesFromFolder(folderName: FileConstants.videoFolderName)
     }
     
     func deleteVideoFromFileManager(videoURL: URL) {
-        do {
-            try FileManager.default.removeItem(at: videoURL)
-            print("Video deleted from file manager:", videoURL)
-        } catch {
-            print("Error deleting video from file manager:", error.localizedDescription)
-        }
+        deleteFile(at: videoURL)
     }
 }
-
-let fileManagerClassInstance = FileManagerClass.sharedInstance
-

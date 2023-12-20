@@ -15,7 +15,7 @@ class AudioRecordIntent: ObservableObject {
     
     //Set up the audio recorder
     func setupAudioRecorder() {
-        guard let audioFilename = fileManagerClassInstance.saveAudioToFileManager() else {
+        guard let audioFilename = FileManagerClass.sharedInstance.saveAudioToFileManager() else {
             return
         }
         // Set up audio session
@@ -77,7 +77,7 @@ class AudioRecordIntent: ObservableObject {
     
     
     func fetchAudios() {
-        if let audioURLs = fileManagerClassInstance.loadAudioDataFromFileManager() {
+        if let audioURLs = FileManagerClass.sharedInstance.loadAudioDataFromFileManager() {
             self.audios = audioURLs
         }
     }
@@ -86,7 +86,7 @@ class AudioRecordIntent: ObservableObject {
         // Get the selected audio file URL from the index
         let selectedAudioURL = audios[offsets.first!]
         // Delete the audio file using FileManager
-        fileManagerClassInstance.deleteAudioFromFileManager(audioURL: selectedAudioURL)
+        FileManagerClass.sharedInstance.deleteAudioFromFileManager(audioURL: selectedAudioURL)
         // Update the audios array to reflect the changes
         audios.remove(atOffsets: offsets)
     }
