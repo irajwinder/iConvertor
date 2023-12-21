@@ -50,8 +50,14 @@ class FileManagerClass: NSObject {
             // Get the documents directory URL
             let documentsDirectory = documentsDirectoryURL()
             // Get contents of the specified directory
-            let filesURL = documentsDirectory.appendingPathComponent(folderName)
-            let fileURLs = try FileManager.default.contentsOfDirectory(at: filesURL, includingPropertiesForKeys: nil)
+            let folderURL = documentsDirectory.appendingPathComponent(folderName)
+            
+            // Check if the folder exists, and create it if it doesn't
+            if !FileManager.default.fileExists(atPath: folderURL.path) {
+                try FileManager.default.createDirectory(at: folderURL, withIntermediateDirectories: true, attributes: nil)
+            }
+            
+            let fileURLs = try FileManager.default.contentsOfDirectory(at: folderURL, includingPropertiesForKeys: nil)
             
             return fileURLs
         } catch {
@@ -59,6 +65,7 @@ class FileManagerClass: NSObject {
             return nil
         }
     }
+    
     
     private func deleteFile(at fileURL: URL) {
         do {
