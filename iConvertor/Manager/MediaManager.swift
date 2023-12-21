@@ -5,8 +5,16 @@
 //  Created by Rajwinder Singh on 12/17/23.
 //
 
-import Foundation
 import AVKit
+import MessageUI
+
+class MediaManagerDelegate: NSObject, MFMailComposeViewControllerDelegate {
+    static let shared = MediaManagerDelegate()
+    
+    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+        controller.dismiss(animated: true, completion: nil)
+    }
+}
 
 class MediaManager {
     private static func getCurrentWindow() -> UIWindow? {
@@ -37,6 +45,21 @@ class MediaManager {
         // Get the current window scene
         if let window = getCurrentWindow() {
             window.rootViewController?.present(activityViewController, animated: true, completion: nil)
+        }
+    }
+    
+    static func shareViaEmail(fileURL: URL, mimeType: String, fileName: String) {
+        guard MFMailComposeViewController.canSendMail() else {
+            print("Device cannot send email")
+            return
+        }
+        let mailComposeVC = MFMailComposeViewController()
+        mailComposeVC.addAttachmentData(try! Data(contentsOf: fileURL), mimeType: mimeType, fileName: fileName)
+        mailComposeVC.mailComposeDelegate = MediaManagerDelegate.shared //Navigate back to the app
+        
+        // Get the current window scene
+        if let window = getCurrentWindow() {
+            window.rootViewController?.present(mailComposeVC, animated: true, completion: nil)
         }
     }
 }

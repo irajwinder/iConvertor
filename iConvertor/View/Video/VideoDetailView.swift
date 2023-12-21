@@ -22,10 +22,20 @@ struct VideoDetailView: View {
             .navigationTitle("Video Detail")
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
-                    Button(action: {
-                        MediaManager.shareViaOtherApps(fileURL: videoURL)
-                    }) {
-                        Label("Share", systemImage: "square.and.arrow.up")
+                    Menu {
+                        Button(action: {
+                            MediaManager.shareViaOtherApps(fileURL: videoURL)
+                        }) {
+                            Label("Share", systemImage: "square.and.arrow.up")
+                        }
+                        
+                        Button(action: {
+                            MediaManager.shareViaEmail(fileURL: videoURL, mimeType: "video/mp4", fileName: "video.mp4")
+                        }) {
+                            Label("Share via Email", systemImage: "envelope")
+                        }
+                    } label: {
+                        Label("More", systemImage: "ellipsis.circle")
                     }
                 }
             }

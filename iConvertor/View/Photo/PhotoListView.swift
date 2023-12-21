@@ -9,8 +9,8 @@ import SwiftUI
 
 struct PhotoListView: View {
     @StateObject private var stateObject = PhotoViewIntent()
+    @StateObject private var permissionManager = PermissionManager()
     @State private var isPhotoCameraViewPresented = false
-    
     
     var body: some View {
         NavigationStack {
@@ -43,14 +43,14 @@ struct PhotoListView: View {
                         Label("Photo", systemImage: "camera")
                     }
                     .sheet(isPresented: $isPhotoCameraViewPresented) {
-                        PhotoCameraView(observedObject: stateObject)
+                        PhotoCameraView(observedObject: stateObject, permissionManager: permissionManager)
                     }
                 }
             }
             .onAppear {
                 stateObject.fetchImages()
-                stateObject.checkCameraAccess()
-                stateObject.checkPhotoLibraryAccess()
+                permissionManager.checkCameraAccess()
+                permissionManager.checkPhotoLibraryAccess()
             }
         }
     }

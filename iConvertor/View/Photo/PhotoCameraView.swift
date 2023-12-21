@@ -10,6 +10,7 @@ import SwiftUI
 struct PhotoCameraView: View {
     @Environment(\.presentationMode) var presentationMode
     @ObservedObject var observedObject: PhotoViewIntent
+    @ObservedObject var permissionManager: PermissionManager
     
     @State private var pickedImage: Image?
     @State private var imageData: Data?
@@ -35,11 +36,11 @@ struct PhotoCameraView: View {
                 VStack(spacing: 30) {
                     Button("Take Photo") {
                         showCameraPicker.toggle()
-                    }.disabled(!observedObject.isCameraPermissionGranted)
+                    }.disabled(!permissionManager.isCameraPermissionGranted)
                     
                     Button("Choose from Library") {
                         showLibraryPicker.toggle()
-                    }.disabled(!observedObject.isPhotoLibraryPermissionGranted)
+                    }.disabled(!permissionManager.isPhotoLibraryPermissionGranted)
                 }
             }
         }
@@ -53,5 +54,5 @@ struct PhotoCameraView: View {
 }
 
 #Preview {
-    PhotoCameraView(observedObject: PhotoViewIntent())
+    PhotoCameraView(observedObject: PhotoViewIntent(), permissionManager: PermissionManager())
 }

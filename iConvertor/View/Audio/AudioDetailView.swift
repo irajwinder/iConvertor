@@ -22,10 +22,20 @@ struct AudioDetailView: View {
             .navigationTitle("Audio Detail")
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
-                    Button(action: {
-                        MediaManager.shareViaOtherApps(fileURL: audioURL)
-                    }) {
-                        Label("Share", systemImage: "square.and.arrow.up")
+                    Menu {
+                        Button(action: {
+                            MediaManager.shareViaOtherApps(fileURL: audioURL)
+                        }) {
+                            Label("Share", systemImage: "square.and.arrow.up")
+                        }
+                        
+                        Button(action: {
+                            MediaManager.shareViaEmail(fileURL: audioURL, mimeType: "audio/wav", fileName: "audio.wav")
+                        }) {
+                            Label("Share via Email", systemImage: "envelope")
+                        }
+                    } label: {
+                        Label("More", systemImage: "ellipsis.circle")
                     }
                 }
             }

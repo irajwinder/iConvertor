@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A2108F5F2B348D1E0009AAD3 /* PermissionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2108F5E2B348D1E0009AAD3 /* PermissionManager.swift */; };
 		A24656992B2A66EA0091BA52 /* AudioListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A24656982B2A66EA0091BA52 /* AudioListView.swift */; };
 		A246569B2B2A66F80091BA52 /* VideoListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A246569A2B2A66F80091BA52 /* VideoListView.swift */; };
 		A246569D2B2A67040091BA52 /* PhotoListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A246569C2B2A67040091BA52 /* PhotoListView.swift */; };
@@ -33,6 +34,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A2108F5E2B348D1E0009AAD3 /* PermissionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionManager.swift; sourceTree = "<group>"; };
 		A24656922B2A65940091BA52 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A24656982B2A66EA0091BA52 /* AudioListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioListView.swift; sourceTree = "<group>"; };
 		A246569A2B2A66F80091BA52 /* VideoListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoListView.swift; sourceTree = "<group>"; };
@@ -111,8 +113,6 @@
 		A24656A52B2A67700091BA52 /* Utility */ = {
 			isa = PBXGroup;
 			children = (
-				A24656B12B2A697C0091BA52 /* FileManager.swift */,
-				A2DE61B62B2FB1E8009DFE09 /* MediaManager.swift */,
 				A24656AD2B2A69250091BA52 /* Constant.swift */,
 				A24656B32B2A698C0091BA52 /* Validation.swift */,
 			);
@@ -173,6 +173,16 @@
 			path = Photo;
 			sourceTree = "<group>";
 		};
+		A2A8EF932B34977D00DBA09D /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				A24656B12B2A697C0091BA52 /* FileManager.swift */,
+				A2DE61B62B2FB1E8009DFE09 /* MediaManager.swift */,
+				A2108F5E2B348D1E0009AAD3 /* PermissionManager.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
 		A2F6BC032B2A647A00DD4FD4 = {
 			isa = PBXGroup;
 			children = (
@@ -195,6 +205,7 @@
 				A24656932B2A65E10091BA52 /* Model */,
 				A24656942B2A65EE0091BA52 /* View */,
 				A24656952B2A65F30091BA52 /* Intent */,
+				A2A8EF932B34977D00DBA09D /* Manager */,
 				A24656A52B2A67700091BA52 /* Utility */,
 				A246569E2B2A67290091BA52 /* Service */,
 				A24656AA2B2A67BB0091BA52 /* Component */,
@@ -302,6 +313,7 @@
 				A2DE61B72B2FB1E8009DFE09 /* MediaManager.swift in Sources */,
 				A24656A42B2A67560091BA52 /* CacheManager.swift in Sources */,
 				A2EDC51B2B2A780900E57B5D /* PhotoCameraView.swift in Sources */,
+				A2108F5F2B348D1E0009AAD3 /* PermissionManager.swift in Sources */,
 				A24656AE2B2A69250091BA52 /* Constant.swift in Sources */,
 				A2DE61BD2B306539009DFE09 /* VideoViewIntent.swift in Sources */,
 				A2F6BC102B2A647A00DD4FD4 /* iConvertorApp.swift in Sources */,
@@ -442,9 +454,9 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = iConvertor/Info.plist;
-				INFOPLIST_KEY_NSCameraUsageDescription = "Camera persmission is needed to save Photo(s)";
+				INFOPLIST_KEY_NSCameraUsageDescription = "Camera persmission is needed to save Photos/Videos";
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Microphone persmission is needed to record Audio(s)";
-				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Photo Library persmission is needed to save Videos(s)";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Photo Library persmission is needed to save Photos/Videos";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -474,9 +486,9 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = iConvertor/Info.plist;
-				INFOPLIST_KEY_NSCameraUsageDescription = "Camera persmission is needed to save Photo(s)";
+				INFOPLIST_KEY_NSCameraUsageDescription = "Camera persmission is needed to save Photos/Videos";
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Microphone persmission is needed to record Audio(s)";
-				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Photo Library persmission is needed to save Videos(s)";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Photo Library persmission is needed to save Photos/Videos";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";

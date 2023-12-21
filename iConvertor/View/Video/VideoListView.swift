@@ -9,6 +9,7 @@ import SwiftUI
 
 struct VideoListView: View {
     @StateObject private var stateObject = VideoViewIntent()
+    @StateObject private var permissionManager = PermissionManager()
     @State private var isRecordingViewPresented = false
     
     var body: some View {
@@ -42,12 +43,14 @@ struct VideoListView: View {
                         Label("Record", systemImage: "video.fill")
                     }
                     .sheet(isPresented: $isRecordingViewPresented) {
-                        VideoRecordView(observedObject: stateObject)
+                        VideoRecordView(observedObject: stateObject, permissionManager: permissionManager)
                     }
                 }
             }
             .onAppear {
                 stateObject.fetchVideos()
+                permissionManager.checkCameraAccess()
+                permissionManager.checkPhotoLibraryAccess()
             }
         }
     }

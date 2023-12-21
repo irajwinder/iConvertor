@@ -9,6 +9,7 @@ import SwiftUI
 
 struct AudioListView: View {
     @StateObject private var stateObject = AudioRecordIntent()
+    @StateObject private var permissionManager = PermissionManager()
     @State private var isRecording = false
     
     var body: some View {
@@ -43,7 +44,7 @@ struct AudioListView: View {
                 print(paths[0])
                 
                 stateObject.fetchAudios()
-                stateObject.checkMicrophonePermission()
+                permissionManager.checkMicrophonePermission()
             })
             .toolbar {
                 ToolbarItem {
@@ -58,7 +59,7 @@ struct AudioListView: View {
                         Image(systemName: isRecording ? "stop.circle" : "mic")
                             .font(.system(size: 20))
                             .foregroundColor(isRecording ? .red : .blue)
-                    }.disabled(!stateObject.isMicrophonePermissionGranted)
+                    }.disabled(!permissionManager.isMicrophonePermissionGranted)
                 }
             }
         }

@@ -10,6 +10,7 @@ import SwiftUI
 struct VideoRecordView: View {
     @Environment(\.presentationMode) var presentationMode
     @ObservedObject var observedObject: VideoViewIntent
+    @ObservedObject var permissionManager: PermissionManager
     
     @State private var recordedVideoURL: URL?
     @State private var showCameraPicker = false
@@ -36,11 +37,11 @@ struct VideoRecordView: View {
                 VStack(spacing: 30) {
                     Button("Record Video") {
                         showCameraPicker.toggle()
-                    }
+                    }.disabled(!permissionManager.isCameraPermissionGranted)
                     
                     Button("Choose from Library") {
                         showLibraryPicker.toggle()
-                    }
+                    }.disabled(!permissionManager.isPhotoLibraryPermissionGranted)
                 }
             }
         }
@@ -54,5 +55,5 @@ struct VideoRecordView: View {
 }
 
 #Preview {
-    VideoRecordView(observedObject: VideoViewIntent())
+    VideoRecordView(observedObject: VideoViewIntent(), permissionManager: PermissionManager())
 }

@@ -9,8 +9,6 @@ import AVFoundation
 
 class AudioRecordIntent: ObservableObject {
     @Published var audios: [URL] = []
-    @Published var isMicrophonePermissionGranted = false
-    
     var audioRecorder: AVAudioRecorder!
     
     //Set up the audio recorder
@@ -37,46 +35,15 @@ class AudioRecordIntent: ObservableObject {
         }
     }
     
-    //check and request microphone permission
-    func checkMicrophonePermission() {
-        let audioSession = AVAudioSession.sharedInstance()
-        
-        switch audioSession.recordPermission {
-        case .granted:
-            print("Microphone permission is granted.")
-            self.isMicrophonePermissionGranted = true
-        case .denied:
-            print("Microphone permission is denied.")
-            self.isMicrophonePermissionGranted = false
-        case .undetermined:
-            audioSession.requestRecordPermission { [weak self] allowed in
-                DispatchQueue.main.async {
-                    if allowed {
-                        print("Microphone permission granted.")
-                        self!.isMicrophonePermissionGranted = true
-                    } else {
-                        print("Microphone permission denied.")
-                        self?.isMicrophonePermissionGranted = false
-                    }
-                }
-            }
-        @unknown default:
-            fatalError("Unhandled case.")
-        }
-    }
-    
-    // Start recording
     func startRecording() {
         setupAudioRecorder()
         audioRecorder.record()
     }
     
-    // Stop recording
     func stopRecording() {
         audioRecorder.stop()
         fetchAudios()
     }
-    
     
     func fetchAudios() {
         if let audioURLs = FileManagerClass.sharedInstance.loadAudioDataFromFileManager() {
