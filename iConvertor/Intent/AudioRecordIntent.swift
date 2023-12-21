@@ -50,12 +50,14 @@ class AudioRecordIntent: ObservableObject {
             self.isMicrophonePermissionGranted = false
         case .undetermined:
             audioSession.requestRecordPermission { [weak self] allowed in
-                if allowed {
-                    print("Microphone permission granted.")
-                    self!.isMicrophonePermissionGranted = true
-                } else {
-                    print("Microphone permission denied.")
-                    self?.isMicrophonePermissionGranted = false
+                DispatchQueue.main.async {
+                    if allowed {
+                        print("Microphone permission granted.")
+                        self!.isMicrophonePermissionGranted = true
+                    } else {
+                        print("Microphone permission denied.")
+                        self?.isMicrophonePermissionGranted = false
+                    }
                 }
             }
         @unknown default:

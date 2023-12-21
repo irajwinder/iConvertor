@@ -35,11 +35,11 @@ struct PhotoCameraView: View {
                 VStack(spacing: 30) {
                     Button("Take Photo") {
                         showCameraPicker.toggle()
-                    }
+                    }.disabled(!observedObject.isCameraPermissionGranted)
                     
                     Button("Choose from Library") {
                         showLibraryPicker.toggle()
-                    }
+                    }.disabled(!observedObject.isPhotoLibraryPermissionGranted)
                 }
             }
         }

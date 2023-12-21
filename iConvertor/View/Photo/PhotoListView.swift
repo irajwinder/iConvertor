@@ -11,6 +11,7 @@ struct PhotoListView: View {
     @StateObject private var stateObject = PhotoViewIntent()
     @State private var isPhotoCameraViewPresented = false
     
+    
     var body: some View {
         NavigationStack {
             VStack {
@@ -48,6 +49,8 @@ struct PhotoListView: View {
             }
             .onAppear {
                 stateObject.fetchImages()
+                stateObject.checkCameraAccess()
+                stateObject.checkPhotoLibraryAccess()
             }
         }
     }
