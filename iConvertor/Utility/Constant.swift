@@ -6,9 +6,8 @@
 //
 
 struct APIConstants {
-    static let clientID = "cQuPvl6JL5eXUnOB"
-    static let headers = ["Authorization": "cQuPvl6JL5eXUnOB"]
-    static let baseImageURL = "https://v2.convertapi.com"
+    static let headers = ["Content-Type": "application/json"]
+    static let baseURL = "https://v2.convertapi.com"
 }
 
 struct FileConstants {
@@ -20,4 +19,9 @@ struct FileConstants {
     
     static let videoFolderName = "VideoFiles"
     static let videoFileExtension = ".mp4"
+}
+
+struct ConversionConstants {
+    static let imageFolderName = "PhotoLibrary"
+    static let imageFileExtension = ".png"
 }

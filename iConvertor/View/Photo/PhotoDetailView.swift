@@ -29,11 +29,36 @@ struct PhotoDetailView: View {
                         }) {
                             Label("Share via Email", systemImage: "envelope")
                         }
+                        
+                        Button(action: {
+                            convertImage()
+                        }) {
+                            Label("Convert Image", systemImage: "photo.badge.plus")
+                        }
                     } label: {
                         Label("More", systemImage: "ellipsis.circle")
                     }
                 }
             }
+    }
+    
+    func convertImage() {
+        NetworkManager.sharedInstance.convertImage(fromConvert: "jpg", toConvert: "png", imageURL: imageURL) { conversionResponse in
+            if let response = conversionResponse {
+                print("Conversion successful. Files: \(response.Files)")
+                for file in response.Files {
+                    print("Conversion URL: \(file.Url)")
+                    
+                    if let imageData = try? Data(contentsOf: file.Url) {
+                        FileManagerClass.sharedInstance.saveFile(imageData)
+                    } else {
+                        print("Failed to convert file URL to Data.")
+                    }
+                }
+            } else {
+                print("Conversion failed.")
+            }
+        }
     }
 }
 

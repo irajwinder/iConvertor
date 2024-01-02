@@ -8,15 +8,9 @@
 import AVKit
 import MessageUI
 
-class MediaManagerDelegate: NSObject, MFMailComposeViewControllerDelegate {
-    static let shared = MediaManagerDelegate()
+class MediaManager: NSObject {
+    static let shared = MediaManager()
     
-    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
-        controller.dismiss(animated: true, completion: nil)
-    }
-}
-
-class MediaManager {
     private static func getCurrentWindow() -> UIWindow? {
         guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene else {
             return nil
@@ -55,11 +49,18 @@ class MediaManager {
         }
         let mailComposeVC = MFMailComposeViewController()
         mailComposeVC.addAttachmentData(try! Data(contentsOf: fileURL), mimeType: mimeType, fileName: fileName)
-        mailComposeVC.mailComposeDelegate = MediaManagerDelegate.shared //Navigate back to the app
+        
+        mailComposeVC.mailComposeDelegate = shared //Navigate back to the app
         
         // Get the current window scene
         if let window = getCurrentWindow() {
             window.rootViewController?.present(mailComposeVC, animated: true, completion: nil)
         }
+    }
+}
+
+extension MediaManager: MFMailComposeViewControllerDelegate {
+    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+        controller.dismiss(animated: true, completion: nil)
     }
 }

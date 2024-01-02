@@ -13,12 +13,12 @@
 		A246569D2B2A67040091BA52 /* PhotoListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A246569C2B2A67040091BA52 /* PhotoListView.swift */; };
 		A24656A02B2A67380091BA52 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A246569F2B2A67380091BA52 /* NetworkManager.swift */; };
 		A24656A22B2A67470091BA52 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A24656A12B2A67470091BA52 /* APIManager.swift */; };
-		A24656A42B2A67560091BA52 /* CacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A24656A32B2A67560091BA52 /* CacheManager.swift */; };
 		A24656A82B2A67A00091BA52 /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A24656A72B2A67A00091BA52 /* TabBarView.swift */; };
 		A24656AC2B2A67E10091BA52 /* Component.swift in Sources */ = {isa = PBXBuildFile; fileRef = A24656AB2B2A67E10091BA52 /* Component.swift */; };
 		A24656AE2B2A69250091BA52 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = A24656AD2B2A69250091BA52 /* Constant.swift */; };
 		A24656B22B2A697C0091BA52 /* FileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A24656B12B2A697C0091BA52 /* FileManager.swift */; };
 		A24656B42B2A698C0091BA52 /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A24656B32B2A698C0091BA52 /* Validation.swift */; };
+		A25C14F12B3AE747002FC4A1 /* ConversionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A25C14F02B3AE747002FC4A1 /* ConversionModel.swift */; };
 		A2DE61B72B2FB1E8009DFE09 /* MediaManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2DE61B62B2FB1E8009DFE09 /* MediaManager.swift */; };
 		A2DE61BB2B2FF08C009DFE09 /* PhotoViewIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2DE61BA2B2FF08C009DFE09 /* PhotoViewIntent.swift */; };
 		A2DE61BD2B306539009DFE09 /* VideoViewIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2DE61BC2B306538009DFE09 /* VideoViewIntent.swift */; };
@@ -41,12 +41,12 @@
 		A246569C2B2A67040091BA52 /* PhotoListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoListView.swift; sourceTree = "<group>"; };
 		A246569F2B2A67380091BA52 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		A24656A12B2A67470091BA52 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
-		A24656A32B2A67560091BA52 /* CacheManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheManager.swift; sourceTree = "<group>"; };
 		A24656A72B2A67A00091BA52 /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
 		A24656AB2B2A67E10091BA52 /* Component.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Component.swift; sourceTree = "<group>"; };
 		A24656AD2B2A69250091BA52 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		A24656B12B2A697C0091BA52 /* FileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManager.swift; sourceTree = "<group>"; };
 		A24656B32B2A698C0091BA52 /* Validation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validation.swift; sourceTree = "<group>"; };
+		A25C14F02B3AE747002FC4A1 /* ConversionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversionModel.swift; sourceTree = "<group>"; };
 		A2DE61B62B2FB1E8009DFE09 /* MediaManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaManager.swift; sourceTree = "<group>"; };
 		A2DE61BA2B2FF08C009DFE09 /* PhotoViewIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewIntent.swift; sourceTree = "<group>"; };
 		A2DE61BC2B306538009DFE09 /* VideoViewIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoViewIntent.swift; sourceTree = "<group>"; };
@@ -76,6 +76,7 @@
 		A24656932B2A65E10091BA52 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				A25C14F02B3AE747002FC4A1 /* ConversionModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -105,7 +106,6 @@
 			children = (
 				A246569F2B2A67380091BA52 /* NetworkManager.swift */,
 				A24656A12B2A67470091BA52 /* APIManager.swift */,
-				A24656A32B2A67560091BA52 /* CacheManager.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -113,8 +113,8 @@
 		A24656A52B2A67700091BA52 /* Utility */ = {
 			isa = PBXGroup;
 			children = (
-				A24656AD2B2A69250091BA52 /* Constant.swift */,
 				A24656B32B2A698C0091BA52 /* Validation.swift */,
+				A24656AD2B2A69250091BA52 /* Constant.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -311,10 +311,10 @@
 				A2DE61BB2B2FF08C009DFE09 /* PhotoViewIntent.swift in Sources */,
 				A24656A02B2A67380091BA52 /* NetworkManager.swift in Sources */,
 				A2DE61B72B2FB1E8009DFE09 /* MediaManager.swift in Sources */,
-				A24656A42B2A67560091BA52 /* CacheManager.swift in Sources */,
 				A2EDC51B2B2A780900E57B5D /* PhotoCameraView.swift in Sources */,
 				A2108F5F2B348D1E0009AAD3 /* PermissionManager.swift in Sources */,
 				A24656AE2B2A69250091BA52 /* Constant.swift in Sources */,
+				A25C14F12B3AE747002FC4A1 /* ConversionModel.swift in Sources */,
 				A2DE61BD2B306539009DFE09 /* VideoViewIntent.swift in Sources */,
 				A2F6BC102B2A647A00DD4FD4 /* iConvertorApp.swift in Sources */,
 			);

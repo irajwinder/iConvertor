@@ -31,12 +31,6 @@ struct AudioListView: View {
                         .onDelete(perform: stateObject.deleteAudio)
                     }
                 }
-                
-                ZStack {
-                    VStack {
-                        
-                    }
-                }
             }
             .navigationTitle("Audio")
             .onAppear(perform: {

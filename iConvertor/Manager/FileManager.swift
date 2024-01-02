@@ -120,4 +120,12 @@ class FileManagerClass: NSObject {
     func deleteVideoFromFileManager(videoURL: URL) {
         deleteFile(at: videoURL)
     }
+    
+    
+    //Convesion Methods
+    func saveFile(_ imageData: Data) {
+        let folderName = ConversionConstants.imageFolderName
+        let fileExtension = ConversionConstants.imageFileExtension
+        _ = saveDataToFileManager(folderName: folderName, data: imageData, fileExtension: fileExtension)
+    }
 }
